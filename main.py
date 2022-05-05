@@ -11,9 +11,11 @@ app = Flask("daten")
 @app.route("/formular/", methods=['GET', 'POST'])
 def formular():
     if request.method == 'POST':
-        ziel_person = request.form['vorname']
-        rueckgabe_string = "Hello " + ziel_person + " deine Daten wurden gespeichert"
-        return rueckgabe_string
+        #ziel_person = request.form['vorname']
+        #rueckgabe_string = "Hello " + ziel_person + " deine Daten wurden gespeichert"
+        aktivitaet = request.form['vorname']
+        zeitpunkt, aktivitaet = daten.aktivitaet_speichern(aktivitaet)
+        return render_template("formular.html")
     else:
         return render_template("formular.html")
 

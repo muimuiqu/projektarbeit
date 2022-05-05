@@ -17,15 +17,15 @@ def speichern(datei, key, value):
         json.dump(datei_inhalt, open_file, indent=4)
 
 
-def aktivitaet_speichern(aktivitaet):
-    datei_name = "aktivitaeten_2.json"
+def anwesenheit_speichern(aktivitaet):
+    datei_name = "anwesenheit_2.json"
     zeitpunkt = datetime.now()
     speichern(datei_name, zeitpunkt, aktivitaet)
     return zeitpunkt, aktivitaet
 
 
 def aktivitaeten_laden():
-    datei_name = "aktivitaeten_2.json"
+    datei_name = "anwesenheit_2.json"
 
     try:
         with open(datei_name) as open_file:
