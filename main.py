@@ -6,9 +6,9 @@ import json
 app = Flask("projektarbeit")
 
 
-@app.route("/formular/", methods=['GET', 'POST'])
+@app.route("/formular/", methods=["GET", "POST"])
 def formular():
-    if request.method == 'POST':
+    if request.method == "POST":
 
         data = request.form
         vorname = data["vorname"]

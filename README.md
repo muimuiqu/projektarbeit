@@ -1,7 +1,6 @@
 Problembeschreibung/Motivation
-Warum dieses Projekt
-Welches Problem löst das Projekt
-Was macht das Projekt Lückenfüller wie: "Dieses Projekt wurde im Rahmen des Programmieren2 Modules an der FHGR gemacht" oder ähnlich sind unnötig. Auch sollten keine Klarnamen, oder Orte genannt werden.
+Seit der 5. Klasse bin ich Mitglied in einem Verein. Das Anwesenheitsprotokoll wird bei uns noch von Hand gemacht und
+ich bin der Meinung, dass die Erfassung der Proben- und Auftrittsbesuche einfacher und schneller erfolgen sollte.
 
 Betrieb
 Welche zusätzliche Pakete müssen bei Bedarf installiert werden. (Muss im Normalfall nicht beachtet werden. Python muss nicht erwähnt werden, da das bei einem Python Projekt impliziert ist.)
