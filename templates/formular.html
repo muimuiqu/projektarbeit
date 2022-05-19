@@ -1,19 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Formular</title>
-</head>
-<body>
-<h1>Eingabe Anwesenheit</h1>
-<form method="POST">
-    <input type="text" name="vorname" placeholder="Vorname"><br><br>
-    <input type="text" name="nachname" placeholder="Nachname"><br><br>
-    <input type="text" name="datum" placeholder="Datum"><br><br>
-    <input type="text" name="anwesenheit_auftritte" placeholder="Auftritte"><br><br>
-    <input type="text" name="anwesenheit_probe" placeholder="Probe"><br><br>
-    <button type="submit">Senden</button>
-</form>
+{% include "header.html" %}
 
-</body>
-</html>
+    <h1>Eingabe Anwesenheit</h1>
+    <p>Erfasse hier deine Anwesenheit</p>
+    <form method="POST">
+        <input type="text" name="vorname" placeholder="Vorname"><br><br>
+        <input type="text" name="nachname" placeholder="Nachname"><br><br>
+        <input type="text" name="datum" placeholder="Datum"><br><br>
+        <input type="text" name="anwesenheit_auftritte" placeholder="Auftritte"><br><br>
+        <input type="text" name="anwesenheit_probe" placeholder="Probe"><br><br>
+        <button type="submit">Senden</button>
+    </form>
+{% include "footer.html" %}
+

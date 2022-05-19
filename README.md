@@ -1,6 +1,6 @@
 Problembeschreibung/Motivation
 Seit der 5. Klasse bin ich Mitglied in einem Verein. Das Anwesenheitsprotokoll wird bei uns noch von Hand gemacht und
-ich bin der Meinung, dass die Erfassung der Proben- und Auftrittsbesuche einfacher und schneller erfolgen sollte.
+ich bin der Meinung, dass die Erfassung der Proben- und Auftrittsbesuche einfacher und schneller erfolgen kann.
 
 Betrieb
 Welche zusätzliche Pakete müssen bei Bedarf installiert werden. (Muss im Normalfall nicht beachtet werden. Python muss nicht erwähnt werden, da das bei einem Python Projekt impliziert ist.)
