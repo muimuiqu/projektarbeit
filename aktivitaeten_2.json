@@ -19,5 +19,29 @@
         "Datum": "22.04.2022",
         "Auftritte": "1",
         "Probe": "6"
+    },
+    {
+        "Vorname": "cilli",
+        "Nachname": "quan",
+        "Datum": "27.05.2022",
+        "Event": "Probe"
+    },
+    {
+        "Vorname": "Mario",
+        "Nachname": "Kart",
+        "Datum": "01.06.2022",
+        "Event": "Auftritt"
+    },
+    {
+        "Vorname": "Lemonade",
+        "Nachname": "Stone",
+        "Datum": "28.08.2021",
+        "Event": "Auftritt"
+    },
+    {
+        "Vorname": "Freddy",
+        "Nachname": "Mercury",
+        "Datum": "01.05.2022",
+        "Event": "Auftritt"
     }
 ]
