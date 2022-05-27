@@ -37,18 +37,15 @@ def formular():
 
 @app.route("/teilnahme/", methods=['GET', 'POST'])
 def teilnahme():
-    if request.method == "POST":
-        data = request.form
-        vorname = data["vorname"]
-        nachname = data["nachname"]
-        try:
-            with open("aktivitaeten_2.json") as open_file:
-                my_dict_2 = json.load(open_file)
-        except FileNotFoundError:
-            my_dict_2 = {}
-        return my_dict_2
-    else:
-        return render_template("teilnahme.html")
+
+    event = event.aktivitaeten_2_laden()
+
+    aktivitaeten_2 = "event"
+    for key, value in event.items():
+        zeile = str(key) + "event" + value + "<br>"
+        aktivitaeten_2 += zeile
+
+    return aktivitaeten_2
 
 
 @app.route("/jahresprogramm/", methods=['GET', 'POST'])
