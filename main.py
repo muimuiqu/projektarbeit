@@ -38,14 +38,13 @@ def formular():
 @app.route("/teilnahme/", methods=['GET', 'POST'])
 def teilnahme():
 
-    event = event.aktivitaeten_2_laden()
+    try:
+        with open("aktivitaeten_2.json", "r") as open_file:
+            datei_inhalt = json.load(open_file)
+    except FileNotFoundError:
+        datei_inhalt = []
 
-    aktivitaeten_2 = "event"
-    for key, value in event.items():
-        zeile = str(key) + "event" + value + "<br>"
-        aktivitaeten_2 += zeile
-
-    return aktivitaeten_2
+    return [datei_inhalt]
 
 
 @app.route("/jahresprogramm/", methods=['GET', 'POST'])

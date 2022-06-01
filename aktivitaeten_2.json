@@ -43,5 +43,11 @@
         "Nachname": "Mercury",
         "Datum": "01.05.2022",
         "Event": "Auftritt"
+    },
+    {
+        "Vorname": "asdf",
+        "Nachname": "asdfas",
+        "Datum": "12",
+        "Event": "Auftritt"
     }
 ]
