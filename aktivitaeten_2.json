@@ -1,53 +1,17 @@
 [
     {
-        "Vorname": "Klaus",
-        "Nachname": "Quan",
+        "Vorname": "Rene",
         "Datum": "22.04.2022",
-        "Auftritte": "5",
-        "Probe": "6"
-    },
-    {
-        "Vorname": "cilli",
-        "Nachname": "M\u00fcller",
-        "Datum": "25.12.2022",
-        "Auftritte": "1",
-        "Probe": "0"
-    },
-    {
-        "Vorname": "Hanni",
-        "Nachname": "Schlegel",
-        "Datum": "22.04.2022",
-        "Auftritte": "1",
-        "Probe": "6"
-    },
-    {
-        "Vorname": "cilli",
-        "Nachname": "quan",
-        "Datum": "27.05.2022",
         "Event": "Probe"
     },
     {
-        "Vorname": "Mario",
-        "Nachname": "Kart",
-        "Datum": "01.06.2022",
-        "Event": "Auftritt"
+        "Vorname": "Cilli",
+        "Datum": "22.04.2022",
+        "Event": "probe"
     },
     {
-        "Vorname": "Lemonade",
-        "Nachname": "Stone",
-        "Datum": "28.08.2021",
-        "Event": "Auftritt"
-    },
-    {
-        "Vorname": "Freddy",
-        "Nachname": "Mercury",
-        "Datum": "01.05.2022",
-        "Event": "Auftritt"
-    },
-    {
-        "Vorname": "asdf",
-        "Nachname": "asdfas",
-        "Datum": "12",
-        "Event": "Auftritt"
+        "Vorname": "Philipp",
+        "Datum": "27.05.2022",
+        "Event": "Auftritte"
     }
 ]

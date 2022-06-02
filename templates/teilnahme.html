@@ -17,8 +17,6 @@
           <li><a href="/" class="nav-link px-2 text-secondary">Home</a></li>
           <li><a href="/formular" class="nav-link px-2 text-white">Erfassung Anwesenheit</a></li>
           <li><a href="/teilnahme" class="nav-link active px-2 text-white">Teilnahme</a></li>
-          <li><a href="/jahresprogramm" class="nav-link px-2 text-white">Jahresprogramm</a></li>
-          <li><a href="/about" class="nav-link px-2 text-white">Kontakt</a></li>
         </ul>
 
 
@@ -26,15 +24,39 @@
 
     </div>
   </header>
+<div class="container-fluid">
+    <h1>Übersicht über Anwesenheit</h1>
+    <p>Hey {{ Vorname }}! Hier siehst du deine bisherige Anwesenheit</p>
+<div class="container">
+        <br>
+        {% if daten_inhalt %}
+            <table>
+                <!--<thead style="text-align:left">
+                    <tr>
+                        <th>Vorname</th>
+                        <th>Datum</th>
+                        <th>Event</th>
+                    </tr>
+                </thead>-->
 
-<h1>Übersicht über Anwesenheit</h1>
-<p>Hier siehst du deine bisherige Anwesenheit</p>
-<form method="POST">
-    <input type="text" name="vorname" placeholder="Vorname"><br><br>
-    <input type="text" name="vorname" placeholder="Nachname"><br><br>
-    <button type="submit">Senden</button>
-</form>
-<!--<p>{{summe}}</p>-->
+                <tbody>
+
+                    {% for x in daten_inhalt: %}
+                    {% for item, value in x.items(): %}
+                    <tr>
+                        <th>{{ item }}</th>
+                        <th>{{ value }}</th>
+                    </tr>
+
+                    {% endfor %}
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p> Keine Einträge vorhanden.</p>
+        {% endif %}
+</div>
+</div>
 
 {% include "footer.html" %}
 

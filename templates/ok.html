@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="{{url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
-    <title>Kontakt</title>
+    <title>Übersicht</title>
 </head>
 <body>
 <header class="p-3 bg-dark text-white">
@@ -16,9 +16,7 @@
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
           <li><a href="/" class="nav-link px-2 text-secondary">Home</a></li>
           <li><a href="/formular" class="nav-link px-2 text-white">Erfassung Anwesenheit</a></li>
-          <li><a href="/teilnahme" class="nav-link px-2 text-white">Teilnahme</a></li>
-          <li><a href="/jahresprogramm" class="nav-link px-2 text-white">Jahresprogramm</a></li>
-          <li><a href="/about" class="nav-link about active px-2 text-white">Kontakt</a></li>
+          <li><a href="/teilnahme" class="nav-link active px-2 text-white">Teilnahme</a></li>
         </ul>
 
 
@@ -26,7 +24,9 @@
 
     </div>
   </header>
-    <h1>Über mich</h1>
-    <p>bla bla</p>
+<div class="container-fluid">
+<br><br>
+    <h1>ADE MERCI!</h1>
+        <p>Deine Daten wurden gespeichert</p>
+</div>
 {% include "footer.html" %}
-

@@ -17,8 +17,6 @@
           <li><a href="/" class="nav-link px-2 text-secondary">Home</a></li>
           <li><a href="/formular" class="nav-link active px-2 text-white">Erfassung Anwesenheit</a></li>
           <li><a href="/teilnahme" class="nav-link px-2 text-white">Teilnahme</a></li>
-          <li><a href="/jahresprogramm" class="nav-link px-2 text-white">Jahresprogramm</a></li>
-          <li><a href="/about" class="nav-link px-2 text-white">Kontakt</a></li>
         </ul>
 
 
@@ -26,15 +24,24 @@
 
     </div>
   </header>
-
+<div class="container-fluid">
     <h1>Eingabe Anwesenheit</h1>
     <p>Erfasse hier deine Anwesenheit</p>
     <form method="POST">
-        <input type="text" name="vorname" placeholder="Vorname"><br><br>
-        <input type="text" name="nachname" placeholder="Nachname"><br><br>
+        <select class="form-select" aria-label="Default select example" name="vorname">
+            <option selected>Wer bist du?</option>
+            <option value="Stefanie">Stefanie</option>
+            <option value="Philipp">Philipp</option>
+            <option value="Rene">Rene</option>
+            <option value="Mario">Mario</option>
+            <option value="Urs">Urs</option>
+            <option value="Cilli">Cilli</option>
+        </select>
+        <br><br>
         <input type="text" name="datum" placeholder="Datum"><br><br>
         <input type="text" name="event" placeholder="Auftritte oder Proben"><br><br>
         <button type="submit">Senden</button>
     </form>
+</div>
 {% include "footer.html" %}
 
