@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="{{url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
-    <title>Anwesenheit</title>
+    <title>Anwesenheit 2022</title>
 </head>
 <body>
 <header class="p-3 bg-dark text-white">
@@ -15,19 +15,19 @@
 
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
           <li><a href="/" class="nav-link px-2 text-secondary">Home</a></li>
-          <li><a href="/formular" class="nav-link active px-2 text-white">Erfassung Anwesenheit</a></li>
-          <li><a href="/teilnahme" class="nav-link px-2 text-white">Teilnahme</a></li>
-            <li><a href="/berechnung" class="nav-link px-2 text-white">Übersicht 2022</a></li>
+          <li><a href="/formular" class="nav-link px-2 text-white">Erfassung Anwesenheit</a></li>
+          <li><a href="/teilnahme" class="nav-link active px-2 text-white">Teilnahme</a></li>
+            <li><a href="/berechnung" class="nav-link px-2 text-white">Anwesenheit 2022</a></li>
         </ul>
 
 
-        </div>
+      </div>
 
     </div>
   </header>
 <div class="container-fluid">
-    <h1>Eingabe Anwesenheit</h1>
-    <p>Erfasse hier deine Anwesenheit</p>
+    <h1>Anwesenheit 2022</h1>
+    <p>Hier siehst du deine Anwesenheit fürs 2022</p>
     <form method="POST">
         <select class="form-select" aria-label="Default select example" name="vorname">
             <option selected>Wer bist du?</option>
@@ -38,11 +38,20 @@
             <option value="Urs">Urs</option>
             <option value="Cilli">Cilli</option>
         </select>
+    <br><br>
+    <form method="POST">
+        <select class="form-select" aria-label="Default select example" name="event">
+            <option selected>Was möchtest du anschauen?</option>
+            <option value="event">Probe</option>
+            <option value="event">Auftritte</option>
+        </select>
         <br><br>
-        <input type="text" name="datum" placeholder="Datum"><br><br>
-        <input type="text" name="event" placeholder="Auftritte oder Proben"><br><br>
         <button type="submit">Senden</button>
     </form>
-</div>
-{% include "footer.html" %}
+    </form>
+    {{ summe_proben }}
 
+</div>
+
+
+{% include "footer.html" %}

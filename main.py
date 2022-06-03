@@ -36,12 +36,37 @@ def formular():
         return render_template("formular.html")
 
 
+@app.route("/ok/", methods=["GET", "POST"])
+def ok():
+    return render_template("formular.html")
+
+
 @app.route("/teilnahme/")
 def teilnahme():
     with open("aktivitaeten_2.json") as open_file:
         json_as_string = open_file.read()
         daten_inhalt = loads(json_as_string)
     return render_template("teilnahme.html", daten_inhalt=daten_inhalt)
+
+
+@app.route("/berechnung/")
+def berechnung():
+
+    with open("aktivitaeten_2.json", "r") as open_file:
+        json_as_string = open_file.read()
+        daten_inhalt = loads(json_as_string)
+
+    summe_proben = 0
+    #summe_auftritte = 0
+
+    for value in daten_inhalt:
+        if value["Vorname"] == "Stefanie":
+            try:
+                summe_proben += summe_proben + 1
+            except:
+                continue
+
+    return render_template("berechnung.html", summe_proben=summe_proben)
 
 
 if __name__ == "__main__":

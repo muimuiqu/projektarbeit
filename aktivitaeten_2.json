@@ -1,17 +1,12 @@
 [
     {
-        "Vorname": "Rene",
+        "Vorname": "Stefanie",
         "Datum": "22.04.2022",
-        "Event": "Probe"
+        "Event": "Auftritt"
     },
     {
-        "Vorname": "Cilli",
-        "Datum": "22.04.2022",
-        "Event": "probe"
-    },
-    {
-        "Vorname": "Philipp",
+        "Vorname": "Stefanie",
         "Datum": "27.05.2022",
-        "Event": "Auftritte"
+        "Event": "Auftritt"
     }
 ]
