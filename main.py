@@ -62,7 +62,7 @@ def berechnung():
     for value in daten_inhalt:
         if value["Vorname"] == "Stefanie":
             try:
-                summe_proben += summe_proben + 1
+                summe_proben += float(summe_proben + 1)
             except:
                 continue
 
