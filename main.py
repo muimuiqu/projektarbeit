@@ -26,7 +26,7 @@ def formular():
         except FileNotFoundError:
             datei_inhalt = []
 
-        my_dict = {"Vorname": vorname, "Datum": datum, "Event": event, }
+        my_dict = {"Vorname": vorname, "Datum": datum, "Event": event}
         datei_inhalt.append(my_dict)
 
         with open("aktivitaeten_2.json", "w") as open_file:
@@ -38,7 +38,7 @@ def formular():
 
 @app.route("/ok/", methods=["GET", "POST"])
 def ok():
-    return render_template("formular.html")
+    return render_template("ok.html")
 
 
 @app.route("/teilnahme/")
@@ -57,12 +57,13 @@ def berechnung():
         daten_inhalt = loads(json_as_string)
 
     summe_proben = 0
-    #summe_auftritte = 0
+    summe_auftritte = 0
 
     for value in daten_inhalt:
         if value["Vorname"] == "Stefanie":
             try:
                 summe_proben += float(summe_proben + 1)
+                summe_auftritte += float(summe_auftritte + 1)
             except:
                 continue
 
