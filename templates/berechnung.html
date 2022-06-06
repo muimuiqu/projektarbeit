@@ -25,12 +25,13 @@
 
     </div>
   </header>
-<div class="container-fluid">
+<div class="container"><br>
     <h1>Anwesenheit 2022</h1>
     <p>Hier siehst du deine Anwesenheit fürs 2022</p>
     <form method="POST">
+        <label for="wer">Wer bist du?</label>
         <select class="form-select" aria-label="Default select example" name="vorname">
-            <option selected>Wer bist du?</option>
+            <option value="vorname">Name</option>
             <option value="Stefanie">Stefanie</option>
             <option value="Philipp">Philipp</option>
             <option value="Rene">Rene</option>
@@ -39,17 +40,20 @@
             <option value="Cilli">Cilli</option>
         </select>
     <br><br>
-    <form method="POST">
+    <div class="form-group">
+        <label for="was">Was möchtest du anschauen?</label>
         <select class="form-select" aria-label="Default select example" name="event">
-            <option selected>Was möchtest du anschauen?</option>
+            <option value ="event">Anlass</option>
             <option value="event">Probe</option>
             <option value="event">Auftritte</option>
         </select>
+    </div>
         <br><br>
-        <button type="submit">Senden</button>
+  <button type="submit" class="btn btn-secondary btn-lg btn-block">Senden</button>
     </form>
-    </form>
+
     {{ summe_proben }}
+    {{ summe_auftritte }}
 
 </div>
 

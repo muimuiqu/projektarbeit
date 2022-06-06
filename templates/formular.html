@@ -25,11 +25,14 @@
 
     </div>
   </header>
-<div class="container-fluid">
+
+<div class="container"><br>
     <h1>Eingabe Anwesenheit</h1>
-    <p>Erfasse hier deine Anwesenheit</p>
+<br><br>
+    <form method="POST">
+        <label for="name">Wer bist du?</label>
         <select class="form-select" aria-label="Default select example" name="vorname">
-            <option selected>Wer bist du?</option>
+            <option value="vorname">Name</option>
             <option value="Stefanie">Stefanie</option>
             <option value="Philipp">Philipp</option>
             <option value="Rene">Rene</option>
@@ -37,17 +40,28 @@
             <option value="Urs">Urs</option>
             <option value="Cilli">Cilli</option>
         </select>
+
         <br>
-    <p>Erfasse hier deinen Anlass</p>
+
+    <div class="form-group">
+        <label for="was">Erfasse hier deinen Anlass</label>
         <select class="form-select" aria-label="Default select example" name="event">
             <option selected>Was möchtest du eintragen?</option>
             <option value="Probe">Probe</option>
             <option value="Auftritt">Auftritt</option>
         </select>
-    <br>
-    <input type="date" name="datum" placeholder="Datum">
-    <br><br>
-    <a href="/ok/" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Senden</a>
-</div>
-{% include "footer.html" %}
+    </div>
+<br>
+    <div class="form-group">
+        <label for="wann">Erfasse hier das Datum</label>
+                <input type="date" class="form-control" id="datum" placeholder="erfasse hier das Datum. " name="datum">
+    </div>
 
+    <br>
+
+    <button type="submit" class="btn btn-secondary btn-lg btn-block">Daten übermitteln</button>
+
+    </form>
+</div>
+
+{% include "footer.html" %}
