@@ -40,7 +40,7 @@ def ok():
 
 
 @app.route("/teilnahme/")  # Teilnahme
-def teilnahme():
+def berechnung():
     with open("aktivitaeten_2.json", "r") as open_file:
         json_as_string = open_file.read()
         datei_inhalt = loads(json_as_string)
@@ -58,87 +58,29 @@ def teilnahme():
     summe_proben_cilli = 0
     summe_auftritte_cilli = 0
 
-    for value in datei_inhalt:  # Eintrag Proben
-        if value["Vorname"] == "Stefanie":
+    for eintrag in datei_inhalt:  # Eintrag Proben
+        if eintrag["Vorname"] == "Stefanie":
             try:
-                summe_proben_stefanie += float(value["event: probe"])
-            except:
-                continue
-        elif value["Vorname"] == "Philipp":
-            try:
-                summe_proben_philipp += float(value["event: probe"])
-            except:
-                continue
-        elif value["Vorname"] == "Rene":
-            try:
-                summe_proben_rene += float(value["event: probe"])
-            except:
-                continue
-        elif value["Vorname"] == "Mario":
-            try:
-                summe_proben_mario += float(value["event: probe"])
-            except:
-                continue
-        elif value["Vorname"] == "Urs":
-            try:
-                summe_proben_urs += float(value["event: probe"])
-            except:
-                continue
-        elif value["Vorname"] == "Cilli":
-            try:
-                summe_proben_cilli += float(value["event: probe"])
+                summe_proben_stefanie = summe_proben_stefanie + 1
             except:
                 continue
 
-    for value in datei_inhalt:  # Eintrag Auftritte
-        if value["Vorname"] == "Stefanie":
+    for eintrag in datei_inhalt:  # Eintrag Auftritte
+        if eintrag["Vorname"] == "Stefanie":
             try:
-                summe_auftritte_stefanie += float(value["event: auftritte"])
-            except:
-                continue
-        elif value["Vorname"] == "Philipp":
-            try:
-                summe_auftritte_philipp += float(value["event: auftritte"])
-            except:
-                continue
-        elif value["Vorname"] == "Rene":
-            try:
-                summe_auftritte_rene += float(value["event: auftritte"])
-            except:
-                continue
-        elif value["Vorname"] == "Mario":
-            try:
-                summe_auftritte_mario += float(value["event: auftritte"])
-            except:
-                continue
-        elif value["Vorname"] == "Urs":
-            try:
-                summe_auftritte_urs += float(value["event: auftritte"])
-            except:
-                continue
-        elif value["Vorname"] == "Cilli":
-            try:
-                summe_auftritte_cilli += float(value["event: auftritte"])
+                summe_auftritte_stefanie = summe_auftritte_stefanie + 1
             except:
                 continue
 
     return render_template("teilnahme.html",
+                           datei_inhalt=datei_inhalt,
                            summe_proben_stefanie=summe_proben_stefanie,
-                           summe_proben_philipp=summe_proben_philipp,
-                           summe_proben_rene=summe_proben_rene,
-                           summe_proben_mario=summe_proben_mario,
-                           summe_proben_urs=summe_proben_urs,
-                           summe_proben_cilli=summe_proben_cilli,
                            summe_auftritte_stefanie=summe_auftritte_stefanie,
-                           summe_auftritte_philipp=summe_auftritte_philipp,
-                           summe_auftritte_rene=summe_auftritte_rene,
-                           summe_auftritte_mario=summe_auftritte_mario,
-                           summe_auftritte_urs=summe_auftritte_urs,
-                           summe_auftritte_cilli=summe_auftritte_cilli,)
+                           )
 
 
 @app.route("/berechnung/")  # Jahr 2022
-def berechnung():
+def uebersicht():
     with open("aktivitaeten_2.json") as open_file:
         json_as_string = open_file.read()
         datei_inhalt = loads(json_as_string)
