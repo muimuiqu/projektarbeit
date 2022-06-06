@@ -23,5 +23,20 @@
         "Vorname": "Rene",
         "Datum": "2022-06-08",
         "Event": "Probe"
+    },
+    {
+        "Vorname": "Stefanie",
+        "Datum": "2022-06-09",
+        "Event": "Probe"
+    },
+    {
+        "Vorname": "Stefanie",
+        "Datum": "2022-06-08",
+        "Event": "Auftritt"
+    },
+    {
+        "Vorname": "Stefanie",
+        "Datum": "2022-06-23",
+        "Event": "Auftritt"
     }
 ]

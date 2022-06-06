@@ -21,7 +21,7 @@ Architektur
 Home-Seite: Begrüssung der Mitglieder
 Erfassung Anwesenheit-Seite: Proben und Auftritte eintragen
 Teilnahme-Seite: Auflistung der besuchten Events, hier kann jedes Mitglied auf seine eigenen erfassten Daten zugreifen
-Übersicht 2022-Seite: Diagramm Übersicht über die Proben und Auftritte aller Mitglieder
+Anwesenheit 2022-Seite: Diagramm Übersicht über die Proben und Auftritte aller Mitglieder
 Hier bei Bedarf eine kurze Beschreibung des Ablaufs des Programms auf Code Ebene z.B. als Ablaufdiagramm.
 
 Ungelöste/unbearbeitete Probleme
