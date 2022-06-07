@@ -39,47 +39,32 @@ def ok():
     return render_template("ok.html")
 
 
-@app.route("/teilnahme/")  # Teilnahme
+@app.route("/teilnahme/", methods=["GET", "POST"])  # ist die Berechnung
 def berechnung():
-    with open("aktivitaeten_2.json", "r") as open_file:
+    with open("aktivitaeten_2.json", "r") as open_file:  # Datenbank (JSON datei) abrufen
         json_as_string = open_file.read()
         datei_inhalt = loads(json_as_string)
 
-    summe_proben_stefanie = 0
-    summe_auftritte_stefanie = 0
-    summe_proben_philipp = 0
-    summe_auftritte_philipp = 0
-    summe_proben_rene = 0
-    summe_auftritte_rene = 0
-    summe_proben_mario = 0
-    summe_auftritte_mario = 0
-    summe_proben_urs = 0
-    summe_auftritte_urs = 0
-    summe_proben_cilli = 0
-    summe_auftritte_cilli = 0
+#  Definition Event-Aufteilung und Summen Mitglieder
+    if request.method.lower() == "post":
+        event_proben = request.form['Probe']
+        event_auftritte = request.form['Auftritte']
 
-    for eintrag in datei_inhalt:  # Eintrag Proben
-        if eintrag["Vorname"] == "Stefanie":
-            try:
-                summe_proben_stefanie = summe_proben_stefanie + 1
-            except:
-                continue
-
-    for eintrag in datei_inhalt:  # Eintrag Auftritte
-        if eintrag["Vorname"] == "Stefanie":
-            try:
-                summe_auftritte_stefanie = summe_auftritte_stefanie + 1
-            except:
-                continue
-
-    return render_template("teilnahme.html",
-                           datei_inhalt=datei_inhalt,
-                           summe_proben_stefanie=summe_proben_stefanie,
-                           summe_auftritte_stefanie=summe_auftritte_stefanie,
-                           )
+#  Daten filtern und zusammenrechnen
+        datei_filtern = datei_inhalt.eingabe_laden()
+        gefilterte_elemente = []
+        summe_proben_stefanie = 0
+        summe_auftritte_stefanie = 0
+        for liste_elemente in datei_filtern:
+            if liste_elemente['Stefanie'] == event_proben and liste_elemente['Event: Probe'].split('-')[2] == event_auftritte:
+                gefilterte_elemente.append(liste_elemente)
+                summe_proben_stefanie = liste_elemente["Probe"]
+                summe_auftritte_stefanie = liste_elemente["Auftritte"]
+        return render_template("teilnahme.html", liste_elemente=gefilterte_elemente, summe_proben_stefanie=summe_proben_stefanie, summe_auftritte_stefanie=summe_auftritte_stefanie, Probe=event_proben, Auftritte=event_auftritte,)
+    return render_template("teilnahme.html")
 
 
-@app.route("/berechnung/")  # Jahr 2022
+@app.route("/berechnung/")  # Übersicht fürs Jahr 2022 und Diagramm
 def uebersicht():
     with open("aktivitaeten_2.json") as open_file:
         json_as_string = open_file.read()

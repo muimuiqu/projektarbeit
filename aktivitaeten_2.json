@@ -1,42 +1,67 @@
 [
     {
-        "Vorname": "Rene",
-        "Datum": "27.05.2022",
-        "Event": "Probe"
-    },
-    {
-        "Vorname": "Rene",
-        "Datum": "22.04.2022",
-        "Event": "Probe"
-    },
-    {
-        "Vorname": "Rene",
-        "Datum": "2022-06-09",
-        "Event": "Probe"
-    },
-    {
-        "Vorname": "Rene",
-        "Datum": "2022-06-14",
-        "Event": "Auftritt"
-    },
-    {
-        "Vorname": "Rene",
-        "Datum": "2022-06-08",
+        "Vorname": "Stefanie",
+        "Datum": "2022-10-05",
         "Event": "Probe"
     },
     {
         "Vorname": "Stefanie",
-        "Datum": "2022-06-09",
+        "Datum": "2022-07-02",
+        "Event": "Auftritt"
+    },
+    {
+        "Vorname": "Stefanie",
+        "Datum": "2022-06-17",
+        "Event": "Auftritt"
+    },
+    {
+        "Vorname": "Stefanie",
+        "Datum": "2022-07-08",
         "Event": "Probe"
     },
     {
         "Vorname": "Stefanie",
-        "Datum": "2022-06-08",
+        "Datum": "2022-06-30",
+        "Event": "Probe"
+    },
+    {
+        "Vorname": "Stefanie",
+        "Datum": "2022-06-24",
+        "Event": "Probe"
+    },
+    {
+        "Vorname": "Stefanie",
+        "Datum": "2022-07-14",
+        "Event": "Probe"
+    },
+    {
+        "Vorname": "Stefanie",
+        "Datum": "2022-06-26",
         "Event": "Auftritt"
     },
     {
         "Vorname": "Stefanie",
-        "Datum": "2022-06-23",
+        "Datum": "2022-06-30",
+        "Event": "Probe"
+    },
+    {
+        "Vorname": "Stefanie",
+        "Datum": "2022-07-10",
         "Event": "Auftritt"
+    },
+    {
+        "Vorname": "Stefanie",
+        "Datum": "2022-07-10",
+        "Event": "Probe"
+    },
+    {
+        "Vorname": "Stefanie",
+        "Datum": "2022-08-29",
+        "Event": "Auftritt"
+    },
+    {
+        "Vorname": "Stefanie",
+        "Datum": "2022-07-09",
+        "Event": "Probe"
     }
 ]
