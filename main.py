@@ -3,6 +3,8 @@ from flask import render_template
 from flask import request
 import json
 from json import loads
+import plotly.express as px
+from plotly.offline import plot
 
 
 app = Flask("projektarbeit")
@@ -54,42 +56,42 @@ def berechnung():
         json_as_string = open_file.read()
         datei_inhalt = loads(json_as_string)
 
-#  Daten filtern und zusammenrechnen
+#  Daten zusammenrechnen
         summe_dauer_proben_stefanie = 0
         summe_dauer_auftritte_stefanie = 0
         summe_dauer_proben_rene = 0
         summe_dauer_auftritte_rene = 0
 
-        for element in datei_inhalt:
-            if element["Vorname"] == "Stefanie":
-                if element["Event"] == "Probe":
-                    try:
-                        summe_dauer_proben_stefanie += int(element["dauer"])
-                    except:
-                        continue
-                else:
-                    try:
-                        summe_dauer_auftritte_stefanie += int(element["dauer"])
-                    except:
-                        continue
+    for eintrag in datei_inhalt:
+        if eintrag["Vorname"] == "Stefanie":
+            if eintrag["Event"] == "Probe":
+                try:
+                    summe_dauer_proben_stefanie += float(eintrag["Dauer"])
+                except:
+                    continue
             else:
-                if element["Event"] == "Probe":
-                    try:
-                        summe_dauer_proben_rene += int(element["dauer"])
-                    except:
-                        continue
-                else:
-                    try:
-                        summe_dauer_auftritte_rene += int(element["dauer"])
-                    except:
-                        continue
+                try:
+                    summe_dauer_auftritte_stefanie += float(eintrag["Dauer"])
+                except:
+                    continue
+        elif eintrag["Vorname"] == "Rene":
+            if eintrag["Event"] == "Probe":
+                try:
+                    summe_dauer_proben_rene += float(eintrag["Dauer"])
+                except:
+                    continue
+            else:
+                try:
+                    summe_dauer_auftritte_rene += float(eintrag["Dauer"])
+                except:
+                    continue
 
-        return render_template("berechnung.html",
-                               summe_dauer_proben_stefanie=summe_dauer_proben_stefanie,
-                               summe_dauer_auftritte_stefanie=summe_dauer_auftritte_stefanie,
-                               summe_dauer_proben_rene=summe_dauer_proben_rene,
-                               summe_dauer_auftritte_rene=summe_dauer_auftritte_rene
-                               )
+    return render_template("berechnung.html",
+                           summe_dauer_proben_stefanie=summe_dauer_proben_stefanie,
+                           summe_dauer_auftritte_stefanie=summe_dauer_auftritte_stefanie,
+                           summe_dauer_proben_rene=summe_dauer_proben_rene,
+                           summe_dauer_auftritte_rene=summe_dauer_auftritte_rene
+                           )
 
 
 if __name__ == "__main__":

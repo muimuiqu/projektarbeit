@@ -7,7 +7,7 @@
 </head>
 <body>
 <header class="p-3 bg-dark text-white">
-    <div class="container">
+    <div class="container-fluid">
       <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
         <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
           <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
@@ -25,32 +25,16 @@
 
     </div>
   </header>
+<br>
 <div class="container-fluid">
-    <h1>Jahresübersicht</h1>
-<div class="container">
-        <br>
-        {% if datei_inhalt %}
-            <table class="table table-striped table-sm">
-                <thead>
-                    <tr>
-                        <th>Vorname</th>
-                        <th>Datum</th>
-                        <th>Anlass</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for eintrag in datei_inhalt: %}
-                    <tr>
-                        {% for item, value in eintrag.items(): %}
-                        <td>{{ value }}</td>
-                        {% endfor %}
-                    </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-        {% else %}
-            <p>Keine Einträge vorhanden</p>
-        {% endif %}
-    </div>
+    <h1>Jahresübersicht</h1><br>
+    <h6>Stefanie:</h6>
+    <p>Investierte Zeit Proben: {{ summe_dauer_proben_stefanie }}</p>
+    <p>Investierte Zeit Auftritte: {{ summe_dauer_auftritte_stefanie }}</p>
+    <br>
+    <h6>Rene:</h6>
+    <p>Investierte Zeit Proben: {{ summe_dauer_proben_rene }}</p>
+    <p>Investierte Zeit Auftritte: {{ summe_dauer_auftritte_rene }}</p>
+    <br>
 </div>
 {% include "footer.html" %}
