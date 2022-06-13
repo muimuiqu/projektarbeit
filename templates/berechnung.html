@@ -32,9 +32,35 @@
     <p>Investierte Zeit Proben: {{ summe_dauer_proben_stefanie }}</p>
     <p>Investierte Zeit Auftritte: {{ summe_dauer_auftritte_stefanie }}</p>
     <br>
+    <h6>Philipp:</h6>
+    <p>Investierte Zeit Proben: {{ summe_dauer_proben_philipp }}</p>
+    <p>Investierte Zeit Auftritte: {{ summe_dauer_auftritte_philipp }}</p>
+    <br>
     <h6>Rene:</h6>
     <p>Investierte Zeit Proben: {{ summe_dauer_proben_rene }}</p>
     <p>Investierte Zeit Auftritte: {{ summe_dauer_auftritte_rene }}</p>
     <br>
+    <h6>Mario:</h6>
+    <p>Investierte Zeit Proben: {{ summe_dauer_proben_mario }}</p>
+    <p>Investierte Zeit Auftritte: {{ summe_dauer_auftritte_mario }}</p>
+    <br>
+    <h6>Urs:</h6>
+    <p>Investierte Zeit Proben: {{ summe_dauer_proben_urs }}</p>
+    <p>Investierte Zeit Auftritte: {{ summe_dauer_auftritte_urs }}</p>
+    <br>
+    <h6>Cilli:</h6>
+    <p>Investierte Zeit Proben: {{ summe_dauer_proben_cilli }}</p>
+    <p>Investierte Zeit Auftritte: {{ summe_dauer_auftritte_cilli }}</p>
+    <br>
 </div>
+
+<br><br>
+<div class="container-fluid"> <!-- beide Events werden hier visuell dargestellt -->
+    <h4>Übersicht Proben</h4>
+    {{ diagramm_proben|safe }}
+
+    <h4>Übersicht Auftritte</h4>
+    {{ diagramm_auftritte|safe}}
+</div>
+
 {% include "footer.html" %}

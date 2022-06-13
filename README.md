@@ -8,6 +8,7 @@ Welche zusätzliche Pakete müssen bei Bedarf installiert werden. (Muss im Norma
 Was muss man bei der Ausführung beachten. Was muss eventuell davor noch gemacht werden.
 Welch Datei muss ausgeführt werden
 Json: import und load (Erstellung und Zugriff der Datenbank)
+PIL: Pillow damit das Titelbild eingesetzt werden kann
 
 Benutzung
 Wie wird das Projekt benutzt
@@ -25,6 +26,7 @@ Anwesenheit 2022-Seite: Diagramm Übersicht über die Proben und Auftritte aller
 Hier bei Bedarf eine kurze Beschreibung des Ablaufs des Programms auf Code Ebene z.B. als Ablaufdiagramm.
 
 Ungelöste/unbearbeitete Probleme
-Was wurde nicht gelöst
 Die HTML.Berechnung wäre sicher einfacher zu lösen als die einzelne Auflistung der Mitglieder.
+Der Download des Titelbilds funktioniert nicht. Die Annahme liegt dabei, dass mehr Packages installiert werden müssen,
+als nur PIL.
 

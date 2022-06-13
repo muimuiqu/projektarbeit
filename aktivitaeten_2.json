@@ -1,104 +1,44 @@
 [
     {
         "Vorname": "Stefanie",
-        "Datum": "2022-10-05",
-        "Event": "Probe"
+        "Datum": "2022-06-01",
+        "Event": "Probe",
+        "Dauer": "2"
     },
     {
         "Vorname": "Stefanie",
-        "Datum": "2022-07-02",
-        "Event": "Auftritt"
+        "Datum": "2022-06-07",
+        "Event": "Probe",
+        "Dauer": "6"
+    },
+    {
+        "Vorname": "Rene",
+        "Datum": "2022-05-02",
+        "Event": "Auftritt",
+        "Dauer": "3"
+    },
+    {
+        "Vorname": "Cilli",
+        "Datum": "2022-06-14",
+        "Event": "Auftritt",
+        "Dauer": "5"
     },
     {
         "Vorname": "Stefanie",
         "Datum": "2022-06-17",
-        "Event": "Auftritt"
+        "Event": "Probe",
+        "Dauer": "5"
     },
     {
-        "Vorname": "Stefanie",
-        "Datum": "2022-07-08",
-        "Event": "Probe"
-    },
-    {
-        "Vorname": "Stefanie",
-        "Datum": "2022-06-30",
-        "Event": "Probe"
-    },
-    {
-        "Vorname": "Stefanie",
-        "Datum": "2022-06-24",
-        "Event": "Probe"
-    },
-    {
-        "Vorname": "Stefanie",
-        "Datum": "2022-07-14",
-        "Event": "Probe"
-    },
-    {
-        "Vorname": "Stefanie",
+        "Vorname": "Urs",
         "Datum": "2022-06-26",
-        "Event": "Auftritt"
+        "Event": "Probe",
+        "Dauer": "8"
     },
     {
         "Vorname": "Stefanie",
         "Datum": "2022-06-30",
-        "Event": "Probe"
-    },
-    {
-        "Vorname": "Stefanie",
-        "Datum": "2022-07-10",
-        "Event": "Auftritt"
-    },
-    {
-        "Vorname": "Stefanie",
-        "Datum": "2022-07-10",
-        "Event": "Probe"
-    },
-    {
-        "Vorname": "Stefanie",
-        "Datum": "2022-08-29",
-        "Event": "Auftritt"
-    },
-    {
-        "Vorname": "Stefanie",
-        "Datum": "2022-07-09",
-        "Event": "Probe"
-    },
-    {
-        "Vorname": "Stefanie",
-        "Datum": "2022-07-09",
-        "Event": "Probe"
-    },
-    {
-        "Vorname": "Stefanie",
-        "Datum": "2022-06-30",
-        "Event": "Auftritt"
-    },
-    {
-        "Vorname": "Stefanie",
-        "Datum": "2022-06-30",
-        "Event": "Probe"
-    },
-    {
-        "Vorname": "Stefanie",
-        "Datum": "2022-07-02",
-        "Event": "Probe"
-    },
-    {
-        "Vorname": "Stefanie",
-        "Datum": "2022-06-30",
-        "Event": "Probe"
-    },
-    {
-        "Vorname": "vorname",
-        "Datum": "",
-        "Event": "Was m\u00f6chtest du eintragen?",
-        "Dauer": "1"
-    },
-    {
-        "Vorname": "Rene",
-        "Datum": "2022-06-25",
         "Event": "Auftritt",
-        "Dauer": "3"
+        "Dauer": "1"
     }
 ]

@@ -5,14 +5,16 @@ import json
 from json import loads
 import plotly.express as px
 from plotly.offline import plot
-
+from PIL import Image
 
 app = Flask("projektarbeit")
 
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+    im = Image.open("(Titelbild_Klein.jpg)")
+    im.load()
+    return render_template("index.html", Image=Image)
 
 
 @app.route("/formular/", methods=['GET', 'POST'])  # Verlinkung Formular
@@ -59,12 +61,20 @@ def berechnung():
 #  Daten zusammenrechnen
         summe_dauer_proben_stefanie = 0
         summe_dauer_auftritte_stefanie = 0
+        summe_dauer_proben_philipp = 0
+        summe_dauer_auftritte_philipp = 0
         summe_dauer_proben_rene = 0
         summe_dauer_auftritte_rene = 0
+        summe_dauer_proben_mario = 0
+        summe_dauer_auftritte_mario = 0
+        summe_dauer_proben_urs = 0
+        summe_dauer_auftritte_urs = 0
+        summe_dauer_proben_cilli = 0
+        summe_dauer_auftritte_cilli = 0
 
     for eintrag in datei_inhalt:
-        if eintrag["Vorname"] == "Stefanie":
-            if eintrag["Event"] == "Probe":
+        if eintrag["Vorname"] == "Stefanie":  # Erste Schlaufe für Dictionary
+            if eintrag["Event"] == "Probe":  # Zweite Schlaufe für im Dictionary in der Kategorie Event
                 try:
                     summe_dauer_proben_stefanie += float(eintrag["Dauer"])
                 except:
@@ -72,6 +82,17 @@ def berechnung():
             else:
                 try:
                     summe_dauer_auftritte_stefanie += float(eintrag["Dauer"])
+                except:
+                    continue
+        elif eintrag["Vorname"] == "Philipp":
+            if eintrag["Event"] == "Probe":
+                try:
+                    summe_dauer_proben_philipp += float(eintrag["Dauer"])
+                except:
+                    continue
+            else:
+                try:
+                    summe_dauer_auftritte_philipp += float(eintrag["Dauer"])
                 except:
                     continue
         elif eintrag["Vorname"] == "Rene":
@@ -85,12 +106,73 @@ def berechnung():
                     summe_dauer_auftritte_rene += float(eintrag["Dauer"])
                 except:
                     continue
+        elif eintrag["Vorname"] == "Mario":
+            if eintrag["Event"] == "Probe":
+                try:
+                    summe_dauer_proben_mario += float(eintrag["Dauer"])
+                except:
+                    continue
+            else:
+                try:
+                    summe_dauer_auftritte_mario += float(eintrag["Dauer"])
+                except:
+                    continue
+        elif eintrag["Vorname"] == "Urs":
+            if eintrag["Event"] == "Probe":
+                try:
+                    summe_dauer_proben_urs += float(eintrag["Dauer"])
+                except:
+                    continue
+            else:
+                try:
+                    summe_dauer_auftritte_urs += float(eintrag["Dauer"])
+                except:
+                    continue
+        elif eintrag["Vorname"] == "Cilli":
+            if eintrag["Event"] == "Probe":
+                try:
+                    summe_dauer_proben_cilli += float(eintrag["Dauer"])
+                except:
+                    continue
+            else:
+                try:
+                    summe_dauer_auftritte_cilli += float(eintrag["Dauer"])
+                except:
+                    continue
+
+    diagramm_proben = px.bar(
+        x=["Stefanie", "Philipp", "Rene", "Mario", "Urs", "Cilli"],
+        y=[summe_dauer_proben_stefanie, summe_dauer_proben_philipp, summe_dauer_proben_rene,
+           summe_dauer_proben_mario, summe_dauer_proben_urs, summe_dauer_proben_cilli],
+        labels={"x": "Mitglieder", "y": "Anzahl Proben"}
+    )
+
+    div_diagramm_proben = plot(diagramm_proben, output_type="div")
+
+    diagramm_auftritte = px.bar(
+        x=["Stefanie", "Philipp", "Rene", "Mario", "Urs", "Cilli"],
+        y=[summe_dauer_auftritte_stefanie, summe_dauer_auftritte_philipp, summe_dauer_auftritte_rene,
+           summe_dauer_auftritte_mario, summe_dauer_auftritte_urs, summe_dauer_auftritte_cilli],
+        labels={"x": "Mitglieder", "y": "Anzahl Auftritte"}
+    )
+
+    div_diagramm_auftritte = plot(diagramm_auftritte, output_type="div")
 
     return render_template("berechnung.html",
                            summe_dauer_proben_stefanie=summe_dauer_proben_stefanie,
                            summe_dauer_auftritte_stefanie=summe_dauer_auftritte_stefanie,
+                           summe_dauer_proben_philipp=summe_dauer_proben_philipp,
+                           summe_dauer_auftritte_philipp=summe_dauer_auftritte_philipp,
                            summe_dauer_proben_rene=summe_dauer_proben_rene,
-                           summe_dauer_auftritte_rene=summe_dauer_auftritte_rene
+                           summe_dauer_auftritte_rene=summe_dauer_auftritte_rene,
+                           summe_dauer_proben_mario=summe_dauer_proben_mario,
+                           summe_dauer_auftritte_mario=summe_dauer_auftritte_mario,
+                           summe_dauer_proben_urs=summe_dauer_proben_urs,
+                           summe_dauer_auftritte_urs=summe_dauer_auftritte_urs,
+                           summe_dauer_proben_cilli=summe_dauer_proben_cilli,
+                           summe_dauer_auftritte_cilli=summe_dauer_auftritte_cilli,
+                           diagramm_proben=div_diagramm_proben,
+                           diagramm_auftritte=div_diagramm_auftritte
                            )
 
 
