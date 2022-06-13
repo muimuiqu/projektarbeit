@@ -24,41 +24,30 @@
       </div>
 
     </div>
-  </header>
-<div class="container"><br>
-    <h1>Einträge</h1>
-    <p>Hier siehst du deine eingetragenen Events</p>
-    <form method="POST">
-        <label for="wer">Wer bist du?</label>
-        <select class="form-select" aria-label="Default select example" name="vorname">
-            <option value="vorname">Name</option>
-            <option value="Stefanie">Stefanie</option>
-            <option value="Philipp">Philipp</option>
-            <option value="Rene">Rene</option>
-            <option value="Mario">Mario</option>
-            <option value="Urs">Urs</option>
-            <option value="Cilli">Cilli</option>
-        </select>
-    <br>
-    <div class="form-group">
-        <label for="was">Was möchtest du anschauen?</label>
-        <select class="form-select" aria-label="Default select example" name="proben, auftritte">
-            <option value ="proben, auftritte">Anlass</option>
-            <option value="proben, auftritte">Probe</option>
-            <option value="proben, auftritte">Auftritte</option>
-        </select>
-    </div>
-        <br><br>
-  <button type="submit" class="btn btn-secondary btn-lg btn-block">Senden</button>
-    <div class="container"><br>
-        <h4>Stefanie</h4>
-        <p>Anzahl Proben: {{ summe_proben_stefanie }}</p>
-        <p>Anzahl Auftritte: {{ summe_auftritte_stefanie }}</p>
-    </div>
-    </form>
-
-
+</header>
+<div class="container-fluid table-responsive">
+    <h4>Überblick über deine Anwesenheit</h4>
+        {% if datei_inhalt %}
+            <table class="table table-striped">
+                <thead class="thead-dark>
+                    <tr>
+                        <th>Vorname</th>
+                        <th>Datum</th>
+                        <th>Event</th>
+                        <th>Dauer</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for element in datei_inhalt: %}
+                    <tr>
+                        {% for item, value in element.items(): %}
+                        <td>{{ value }}</td>
+                        {% endfor %}
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p> nix gefunden </p>
+        {% endif %}
 </div>
-
-
-{% include "footer.html" %}

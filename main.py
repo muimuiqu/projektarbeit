@@ -20,12 +20,13 @@ def formular():
         vorname = data["vorname"]
         datum = data["datum"]
         event = data["event"]
+        dauer = data["dauer"]
         try:
             with open("aktivitaeten_2.json", "r") as open_file:  # r für read = lesen
                 datei_inhalt = json.load(open_file)
         except FileNotFoundError:
             datei_inhalt = []
-        my_dict = {"Vorname": vorname, "Datum": datum, "Event": event}
+        my_dict = {"Vorname": vorname, "Datum": datum, "Event": event, "Dauer": dauer}
         datei_inhalt.append(my_dict)
         with open("aktivitaeten_2.json", "w") as open_file:
             json.dump(datei_inhalt, open_file, indent=4)  # indent=4 sieht schöner aussieht
@@ -45,23 +46,42 @@ def berechnung():
         json_as_string = open_file.read()
         datei_inhalt = loads(json_as_string)
 
-#  Definition Event-Aufteilung und Summen Mitglieder
-    if request.method.lower() == "post":
-        event_proben = request.form['Probe']
-        event_auftritte = request.form['Auftritte']
-
 #  Daten filtern und zusammenrechnen
-        datei_filtern = datei_inhalt.eingabe_laden()
-        gefilterte_elemente = []
-        summe_proben_stefanie = 0
-        summe_auftritte_stefanie = 0
-        for liste_elemente in datei_filtern:
-            if liste_elemente['Stefanie'] == event_proben and liste_elemente['Event: Probe'].split('-')[2] == event_auftritte:
-                gefilterte_elemente.append(liste_elemente)
-                summe_proben_stefanie = liste_elemente["Probe"]
-                summe_auftritte_stefanie = liste_elemente["Auftritte"]
-        return render_template("teilnahme.html", liste_elemente=gefilterte_elemente, summe_proben_stefanie=summe_proben_stefanie, summe_auftritte_stefanie=summe_auftritte_stefanie, Probe=event_proben, Auftritte=event_auftritte,)
-    return render_template("teilnahme.html")
+        summe_dauer_proben_stefanie = 0
+        summe_dauer_auftritte_stefanie = 0
+        summe_dauer_proben_rene = 0
+        summe_dauer_auftritte_rene = 0
+
+        for element in datei_inhalt:
+            if element["Vorname"] == "Stefanie":
+                if element["Event"] == "Probe":
+                    try:
+                        summe_dauer_proben_stefanie += int(element["dauer"])
+                    except:
+                        continue
+                else:
+                    try:
+                        summe_dauer_auftritte_stefanie += int(element["dauer"])
+                    except:
+                        continue
+            else:
+                if element["Event"] == "Probe":
+                    try:
+                        summe_dauer_proben_rene += int(element["dauer"])
+                    except:
+                        continue
+                else:
+                    try:
+                        summe_dauer_auftritte_rene += int(element["dauer"])
+                    except:
+                        continue
+
+        return render_template("teilnahme.html",
+                               summe_dauer_proben_stefanie=summe_dauer_proben_stefanie,
+                               summe_dauer_auftritte_stefanie=summe_dauer_auftritte_stefanie,
+                               summe_dauer_proben_rene=summe_dauer_proben_rene,
+                               summe_dauer_auftritte_rene=summe_dauer_auftritte_rene
+                               )
 
 
 @app.route("/berechnung/")  # Übersicht fürs Jahr 2022 und Diagramm
