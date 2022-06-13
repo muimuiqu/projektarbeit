@@ -40,7 +40,15 @@ def ok():
     return render_template("ok.html")
 
 
-@app.route("/teilnahme/", methods=["GET", "POST"])  # ist die Berechnung
+@app.route("/teilnahme/")  # ist die Datenausgabe
+def uebersicht():
+    with open("aktivitaeten_2.json") as open_file:
+        json_as_string = open_file.read()
+        datei_inhalt = loads(json_as_string)
+    return render_template("teilnahme.html", datei_inhalt=datei_inhalt)
+
+
+@app.route("/berechnung/")  # Übersicht fürs Jahr 2022 und Diagramm
 def berechnung():
     with open("aktivitaeten_2.json", "r") as open_file:  # Datenbank (JSON datei) abrufen
         json_as_string = open_file.read()
@@ -76,20 +84,12 @@ def berechnung():
                     except:
                         continue
 
-        return render_template("teilnahme.html",
+        return render_template("berechnung.html",
                                summe_dauer_proben_stefanie=summe_dauer_proben_stefanie,
                                summe_dauer_auftritte_stefanie=summe_dauer_auftritte_stefanie,
                                summe_dauer_proben_rene=summe_dauer_proben_rene,
                                summe_dauer_auftritte_rene=summe_dauer_auftritte_rene
                                )
-
-
-@app.route("/berechnung/")  # Übersicht fürs Jahr 2022 und Diagramm
-def uebersicht():
-    with open("aktivitaeten_2.json") as open_file:
-        json_as_string = open_file.read()
-        datei_inhalt = loads(json_as_string)
-    return render_template("/berechnung.html", datei_inhalt=datei_inhalt)
 
 
 if __name__ == "__main__":
