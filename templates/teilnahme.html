@@ -28,7 +28,7 @@
 <br>
 <div class="container-fluid table-responsive">
     <h1>Überblick über deine Anwesenheit</h1>
-        {% if datei_inhalt %}
+        {% if datei_inhalt %} <!-- if Bedingung -->
             <table class="table table-striped table-sm">
                 <thead>
                     <tr>
@@ -43,13 +43,13 @@
                     <tr>
                         {% for item, value in eintrag.items(): %}
                         <td>{{ value }}</td>
-                        {% endfor %}
+                        {% endfor %} <!-- Beendung der Vorschleife -->
                     </tr>
                     {% endfor %}
                 </tbody>
             </table>
-        {% else %}
+        {% else %} <!-- Wenn Bedingung nicht erfüllt dann -->
             <p> Keine Daten vorhanden </p>
-        {% endif %}
+        {% endif %} <!--Beendung der if Bedingung -->
 </div>
 {% include "footer.html" %}

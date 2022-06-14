@@ -4,26 +4,30 @@ ich bin der Meinung, dass die Erfassung der Proben- und Auftrittsbesuche einfach
 In diesem Projekt wurde die Anwesenheitserfassung von 6 Mitglieder realisiert.
 
 Betrieb
-Welche zusätzliche Pakete müssen bei Bedarf installiert werden. (Muss im Normalfall nicht beachtet werden. Python muss nicht erwähnt werden, da das bei einem Python Projekt impliziert ist.)
-Was muss man bei der Ausführung beachten. Was muss eventuell davor noch gemacht werden.
-Welch Datei muss ausgeführt werden
 Json: import und load (Erstellung und Zugriff der Datenbank)
 PIL: Pillow damit das Titelbild eingesetzt werden kann
+Plotly: für die grafische Darstellung
+Flask: vorgegebene Architektur DOM Tree
+Request: Einsatz von Formular
+Bootstrap: für die schöne/responsive Darstellung --> CSS
 
 Benutzung
 Wie wird das Projekt benutzt
 Welche Optionen oder auch Spezialitäten existieren
 Die Idee dahinter ist, dass jedes Mitglied die Erfassung selbstständig nachtragen kann.
-Bei der Übersicht-Seite 2022 ist auf einem Blick erkenntlich, welches Mitglied die häufigsten Events besucht hat.
-Auf diese Art und Weise spart man sich die Zeit, dass jemand aus dem Verein die Mitglieder zählt und per Excel Daten die Events auswerten muss.
-Zusätzlich bekommt man mit einer schönen visuellen Darstellung eine angenehme Sicht.
+Auf diese Art und Weise spart man sich die Zeit, dass jemand aus dem Verein die Anwesenheit der Mitglieder zählt und
+per Excel die Daten auswerten muss.
+Bei der Teilnahme selbst kann das Mitglied zwischen der Kategorie Auftritt und Probe auswählen.
+Mit einer Übersicht, auf welchem erkenntlich ist, welches Mitglied die häufigsten Events besucht hat, erleichtert die
+Auswertung.
 
 Architektur
 Home-Seite: Begrüssung der Mitglieder
-Erfassung Anwesenheit-Seite: Proben und Auftritte eintragen
-Teilnahme-Seite: Auflistung der besuchten Events, hier kann jedes Mitglied auf seine eigenen erfassten Daten zugreifen
-Anwesenheit 2022-Seite: Diagramm Übersicht über die Proben und Auftritte aller Mitglieder
-Hier bei Bedarf eine kurze Beschreibung des Ablaufs des Programms auf Code Ebene z.B. als Ablaufdiagramm.
+Erfassung Anwesenheit-Seite: Eintragung des Stundenaufwands in den Kategorien Proben und Auftritte
+Teilnahme-Seite: Auflistung der besuchten Events von allen Mitgliedern
+Jahr 2022-Seite: Zusammenfassung Stunden aller Mitglieder. Diagramm Übersicht über die Proben und Auftritte
+aller Mitglieder. Mit einer Schlaufe 
+
 
 Ungelöste/unbearbeitete Probleme
 Die HTML.Berechnung wäre sicher einfacher zu lösen als die einzelne Auflistung der Mitglieder.

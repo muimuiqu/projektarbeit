@@ -30,7 +30,7 @@
     <h1>Eingabe Anwesenheit</h1>
 <br>
     <form method="POST">
-        <label for="name">Identifiziere dich</label>
+        <label>Identifiziere dich</label>  <!-- Benennung der Kategorie in der Webapplikation -->
         <select class="form-select" aria-label="Default select example" name="vorname">
             <option value="vorname">Wer bist du?</option>
             <option value="Stefanie">Stefanie</option>
@@ -44,21 +44,21 @@
         <br>
 
     <div class="form-group">
-        <label for="was">Erfasse hier deinen Anlass</label>
-        <select class="form-select" aria-label="Default select example" name="event">
+        <label>Erfasse hier deinen Anlass</label>
+        <select class="form-select" aria-label="Default select example" name="event"> <!-- Dropdown -->
             <option selected>Was möchtest du eintragen?</option>
             <option value="Probe">Probe</option>
             <option value="Auftritt">Auftritt</option>
         </select>
     </div>
 <br>
-    <div class="form-group">
-        <label for="wann">Erfasse hier das Datum</label>
+    <div class="form-group">  <!-- Alle Eingaben möglich -->
+        <label>Erfasse hier das Datum</label>
                 <input type="date" class="form-control" id="datum" placeholder="erfasse hier das Datum" name="datum">
     </div>
             <br>
     <div class="form-group">
-        <label for="wie lange">Erfasse hier deine Stunden</label>
+        <label for=>Erfasse hier deine Stunden</label>
                 <input class="form-control" id="dauer" placeholder="erfasse hier deine Stunden" name="dauer">
 
     </div>

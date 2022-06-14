@@ -40,5 +40,11 @@
         "Datum": "2022-06-30",
         "Event": "Auftritt",
         "Dauer": "1"
+    },
+    {
+        "Vorname": "Philipp",
+        "Datum": "2022-06-14",
+        "Event": "Auftritt",
+        "Dauer": "5"
     }
 ]

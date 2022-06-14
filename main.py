@@ -1,18 +1,18 @@
-from flask import Flask
-from flask import render_template
-from flask import request
-import json
+from flask import Flask  # Architektur für DOM-Tree (Document Object Model)
+from flask import render_template # Ausgabe
+from flask import request  # Datenübergabe für methods GET und POST
+import json # JavaScript Object Notation -- JavaScript Nutzung
 from json import loads
-import plotly.express as px
-from plotly.offline import plot
-from PIL import Image
+import plotly.express as px  # visuelle Darstellung für Grafik
+from plotly.offline import plot  # Funktionalität für Offline Modus
+from PIL import Image  # Bilder PIL für Pillow
 
 app = Flask("projektarbeit")
 
 
 @app.route("/")
 def index():
-    im = Image.open("(Titelbild_Klein.jpg)")
+    im = Image.open("Titelbild_Klein.jpg")
     im.load()
     return render_template("index.html", Image=Image)
 
@@ -72,11 +72,12 @@ def berechnung():
         summe_dauer_proben_cilli = 0
         summe_dauer_auftritte_cilli = 0
 
-    for eintrag in datei_inhalt:
+    for eintrag in datei_inhalt:  # Schlaufe in Schlaufe. Es wird als 1. auf Dictionary zugegriffen
+        # danach Kategorie Event
         if eintrag["Vorname"] == "Stefanie":  # Erste Schlaufe für Dictionary
             if eintrag["Event"] == "Probe":  # Zweite Schlaufe für im Dictionary in der Kategorie Event
                 try:
-                    summe_dauer_proben_stefanie += float(eintrag["Dauer"])
+                    summe_dauer_proben_stefanie += float(eintrag["Dauer"])  # float wegen 1.5 Stunden
                 except:
                     continue
             else:
@@ -144,12 +145,12 @@ def berechnung():
         x=["Stefanie", "Philipp", "Rene", "Mario", "Urs", "Cilli"],
         y=[summe_dauer_proben_stefanie, summe_dauer_proben_philipp, summe_dauer_proben_rene,
            summe_dauer_proben_mario, summe_dauer_proben_urs, summe_dauer_proben_cilli],
-        labels={"x": "Mitglieder", "y": "Anzahl Proben"}
+        labels={"x": "Mitglieder", "y": "Anzahl Proben"}  #Beschriftung der Grafik
     )
 
     div_diagramm_proben = plot(diagramm_proben, output_type="div")
 
-    diagramm_auftritte = px.bar(
+    diagramm_auftritte = px.bar(  # bar für das Balkendiagramm
         x=["Stefanie", "Philipp", "Rene", "Mario", "Urs", "Cilli"],
         y=[summe_dauer_auftritte_stefanie, summe_dauer_auftritte_philipp, summe_dauer_auftritte_rene,
            summe_dauer_auftritte_mario, summe_dauer_auftritte_urs, summe_dauer_auftritte_cilli],
@@ -176,5 +177,5 @@ def berechnung():
                            )
 
 
-if __name__ == "__main__":
+if __name__ == "__main__":  # wird zwingend für die Webapplikation benötigt
     app.run(debug=True, port=5000)

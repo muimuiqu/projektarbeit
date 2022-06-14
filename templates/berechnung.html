@@ -29,7 +29,8 @@
 <div class="container-fluid">
     <h1>Jahresübersicht</h1><br>
     <h6>Stefanie:</h6>
-    <p>Investierte Zeit Proben: {{ summe_dauer_proben_stefanie }}</p>
+    <p>Investierte Zeit Proben: {{ summe_dauer_proben_stefanie }}</p>  <!-- Jinja2 damit Python Datei Zugriff auf HTML
+    Datei bekommt -->
     <p>Investierte Zeit Auftritte: {{ summe_dauer_auftritte_stefanie }}</p>
     <br>
     <h6>Philipp:</h6>
@@ -57,10 +58,10 @@
 <br><br>
 <div class="container-fluid"> <!-- beide Events werden hier visuell dargestellt -->
     <h4>Übersicht Proben</h4>
-    {{ diagramm_proben|safe }}
+    {{ diagramm_proben|safe }}  <!-- unveränderte Übergabe an Jinja2, ansonsten wird die Grafik verändert -->
 
     <h4>Übersicht Auftritte</h4>
     {{ diagramm_auftritte|safe}}
 </div>
 
-{% include "footer.html" %}
+{% include "footer.html" %} <!-- % für Jinja2 -->
