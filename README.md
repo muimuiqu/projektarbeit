@@ -25,7 +25,7 @@ Erfassung Anwesenheit-Seite: Eintragung des Stundenaufwands in den Kategorien Pr
 Teilnahme-Seite: Auflistung der besuchten Events von allen Mitgliedern
 Jahr 2022-Seite: Zusammenfassung Stunden aller Mitglieder. Diagramm Übersicht über die Proben und Auftritte
 aller Mitglieder. Mit einer Schlaufe 
-
+![](static/flowchart/Flussdiagramm PRO 2.jpg)
 
 Ungelöste/unbearbeitete Probleme
 Die HTML.Berechnung wäre sicher einfacher zu lösen als die einzelne Auflistung der Mitglieder.
