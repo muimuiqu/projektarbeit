@@ -12,8 +12,6 @@ Request: Einsatz von Formular
 Bootstrap: für die schöne/responsive Darstellung --> CSS
 
 Benutzung
-Wie wird das Projekt benutzt
-Welche Optionen oder auch Spezialitäten existieren
 Die Idee dahinter ist, dass jedes Mitglied die Erfassung selbstständig nachtragen kann.
 Auf diese Art und Weise spart man sich die Zeit, dass jemand aus dem Verein die Anwesenheit der Mitglieder zählt und
 per Excel die Daten auswerten muss.
