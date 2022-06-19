@@ -23,7 +23,7 @@ Die Erfassung erfolgt von jedem Mitglied selbstständig. Auf diese Art und Weise
 ausgewertet. Bei der Erfassung kann das Mitglied zwischen den Kategorien Probe und Auftritt auswählen
 
 ## Architektur
-![](static/flowchart/Flussdiagramm PRO 2.jpg)
+![Flussdiagramm](static/flowchart/Flussdiagramm%20PRO%202.jpg)
 
 ### Übersicht Webapplikation
 | Name Webpage | Funktion |
