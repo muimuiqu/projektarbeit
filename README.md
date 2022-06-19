@@ -1,36 +1,41 @@
-Problembeschreibung/Motivation
-Seit der 5. Klasse bin ich Mitglied in einem Verein. Das Anwesenheitsprotokoll wird bei uns noch von Hand gemacht und
-ich bin der Meinung, dass die Erfassung der Proben- und Auftrittsbesuche einfacher und schneller erfolgen kann.
-In diesem Projekt wurde die Anwesenheitserfassung von 6 Mitglieder realisiert.
+# 🎷Erfassung der Anwesenheit für Vereine🎺
+Das Anwesenheitsprotokoll wird in vielen Vereinen noch von Hand geschrieben.
+In diesem Projekt beschränkt sich die Erfassung von Proben und Auftritten von insgesamt 6 Mitgliedern.
 
-Betrieb
-Json: import und load (Erstellung und Zugriff der Datenbank)
-PIL: Pillow damit das Titelbild eingesetzt werden kann
-Plotly: für die grafische Darstellung
-Flask: vorgegebene Architektur DOM Tree
-Request: Einsatz von Formular
-Bootstrap: für die schöne/responsive Darstellung --> CSS
+## Inhalt
+- Betrieb: zusätzliche Packages
+- Benutzung der Webapplikation
+- Architektur
+- Ungelöste Probleme
 
-Benutzung
-Die Idee dahinter ist, dass jedes Mitglied die Erfassung selbstständig nachtragen kann.
-Auf diese Art und Weise spart man sich die Zeit, dass jemand aus dem Verein die Anwesenheit der Mitglieder zählt und
-per Excel die Daten auswerten muss.
-Bei der Teilnahme selbst kann das Mitglied zwischen der Kategorie Auftritt und Probe auswählen.
-Mit einer Übersicht, auf welchem erkenntlich ist, welches Mitglied die häufigsten Events besucht hat, erleichtert die
-Auswertung.
+## Betrieb
+Folgende Pakete wurden zusätzlich für dieses Projekt geladen
 
-Architektur
-Home-Seite: Begrüssung der Mitglieder
-Erfassung Anwesenheit-Seite: Eintragung des Stundenaufwands in den Kategorien Proben und Auftritte
-Teilnahme-Seite: Auflistung der besuchten Events von allen Mitgliedern
-Jahr 2022-Seite: Zusammenfassung Stunden aller Mitglieder. Diagramm Übersicht über die Proben und Auftritte
-aller Mitglieder. Mit einer Schlaufe 
-![](static/flowchart/Flussdiagramm PRO 2.jpg)
+- Flask - vorgegebene Architektur, welche für Python geschrieben ist (DOM-Tree)
+- JSON - für die Erstellung Zugriff für die Datenbank
+- Plotly - stellt Grafiken zur Verfügung
+- PIL - für Pillow, damit Bilder eingesetzt werden können
+- Bootstrap - fürs User Interface (schöne und responsive Darstellung)
+- Dillinger - Saubere Darstellung Readme
 
-Ungelöste/unbearbeitete Probleme
-Die HTML.Berechnung wäre sicher einfacher zu lösen als die einzelne Auflistung der Mitglieder.
-Der Download des Titelbilds funktioniert nicht. Die Annahme liegt dabei, dass mehr Packages installiert werden müssen,
-als nur PIL.
+## Benutzung
+Die Erfassung erfolgt von jedem Mitglied selbstständig. Auf diese Art und Weise wird Zeit gespart und die Daten werden
+ausgewertet. Bei der Erfassung kann das Mitglied zwischen den Kategorien Probe und Auftritt auswählen
 
-Test 2
+## Architektur
+![Flussdiagramm PRO 2](static/flowchart/Flussdiagramm PRO 2.jpg)
 
+### Übersicht Webapplikation
+| Name Webpage | Funktion |
+| ------------ | -------  |
+| Home | Begrüssung der Mitglieder |
+| Erfassung Anwesenheit | Eintragung Aufwand der Kategorien in Stunden |
+| Teilnahme | Auflistung der besuchten Events von allen Mitgliedern |
+| Jahr 2022 | Zusammenfassung aller Stunden der Mitglieder |
+|| visuelle Darstellung des Aufwandes in einer Grafik / Diagramm|
+
+## Ungelöste Probleme
+Die Berechnung wäre sicher einfacher zu lösen als, jedes einzelne Mitglied aufzulisten. Für eine Erfassung von über
+100 und mehr ist der Aufwand zu hoch mit der Berechnung in diesem Projekt.
+Der Download des Titelbildes funktioniert nicht richtig. Die Annahme liegt dabei, dass noch ein
+anderes Packages installiert werden muss.

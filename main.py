@@ -1,7 +1,7 @@
 from flask import Flask  # Architektur für DOM-Tree (Document Object Model)
-from flask import render_template # Ausgabe
+from flask import render_template  # Ausgabe
 from flask import request  # Datenübergabe für methods GET und POST
-import json # JavaScript Object Notation -- JavaScript Nutzung
+import json  # JavaScript Object Notation -- JavaScript Nutzung
 from json import loads
 import plotly.express as px  # visuelle Darstellung für Grafik
 from plotly.offline import plot  # Funktionalität für Offline Modus
@@ -12,7 +12,7 @@ app = Flask("projektarbeit")
 
 @app.route("/")
 def index():
-    im = Image.open("Titelbild_Klein.jpg")
+    im = Image.open("static/pictures/Titelbild_Klein.jpg")
     im.load()
     return render_template("index.html", Image=Image)
 
@@ -145,7 +145,7 @@ def berechnung():
         x=["Stefanie", "Philipp", "Rene", "Mario", "Urs", "Cilli"],
         y=[summe_dauer_proben_stefanie, summe_dauer_proben_philipp, summe_dauer_proben_rene,
            summe_dauer_proben_mario, summe_dauer_proben_urs, summe_dauer_proben_cilli],
-        labels={"x": "Mitglieder", "y": "Anzahl Proben"}  #Beschriftung der Grafik
+        labels={"x": "Mitglieder", "y": "Anzahl Proben"}  # Beschriftung der Grafik
     )
 
     div_diagramm_proben = plot(diagramm_proben, output_type="div")
