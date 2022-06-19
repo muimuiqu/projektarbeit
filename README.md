@@ -32,5 +32,5 @@ Die HTML.Berechnung wäre sicher einfacher zu lösen als die einzelne Auflistung
 Der Download des Titelbilds funktioniert nicht. Die Annahme liegt dabei, dass mehr Packages installiert werden müssen,
 als nur PIL.
 
-Test
+Test 2
 
